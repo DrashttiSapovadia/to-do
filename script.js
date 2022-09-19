@@ -114,10 +114,10 @@ function pendingPrint(){
         list +=`<div class='${value.id} design'>`
         list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >`+ "&nbsp";
-            list +=`<ul>`
+            list +=`<ul style="list-style : none;">`
             list += `<li style= "font-size :larger;">`+`<b>`+value.title +`</b>`+ "&nbsp" +`</li>`;
             list += value.description + "&nbsp"+"&nbsp" ;
-            list += `</ul>`
+            list += `</ul>`;
             list +=`</div>`;
             list += `<div class="space">`
             list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
@@ -134,10 +134,10 @@ function completedPrint(){
             list +=`<div class='${value.id} design'>`
             list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="pqr('${value.id}')" checked >` + "&nbsp";
-            list +=`<ul>`
+            list +=`<ul style="list-style : none;">`
             list +=`<li style= "font-size :larger;">`+`<b>`+ value.title + `</b>`+ "&nbsp"  +`</li>`;
             list += value.description + "&nbsp"+ "&nbsp" ;
-            list += `</ul>`
+            list += `</ul>`;
             list +=`</div>`;
             list += `<div class="space">`
             list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
