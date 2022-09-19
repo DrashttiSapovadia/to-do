@@ -88,6 +88,7 @@ function edit(id)
                 data : JSON.stringify(data),
                 contentType : "application/json",
                 success:function()
+                
         {
             getTodo()
         }
@@ -104,6 +105,11 @@ function del(id)
         success:function()
         {
             getTodo()
+            $("#title").val('')
+            $("#description").val('')
+            $("#change").hide()
+            $("#add").show()
+
         }
     })
 }
@@ -123,33 +129,25 @@ function getTodo(id){
             }
             
         })
-        // },
-        // console.log(pending),
         pendingPrint()
         completedPrint()
-        // var list = "";
-        // {   
-        //     list +=`<div class='${value.id}' style="background-color : lightgrey; padding :4px; height :50px; border : 4px solid black" >`
-        //     list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >` + "&nbsp";
-        //     list += value.title + "&nbsp";
-        //     list += value.description + "&nbsp"+ "&nbsp" ;
-        //     list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no" style= ' margin-left :500px;'>  </i>`;
-        //     list += `<i class='fas fa-trash' style= ' margin-left :500px;'  type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
-        //     list +=`</div>`;
-        // });
-            // $("#addedtask").append(list)
+       
     })
 }
 
 function pendingPrint(){
     pending.forEach(value => {
         var list = ""
-        list +=`<div class='${value.id}' style="background-color : lightgrey; padding :4px; height :50px; border : 4px solid black" >`
+        list +=`<div class='${value.id} design'>`
+        list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >` + "&nbsp";
             list += value.title + "&nbsp";
             list += value.description + "&nbsp"+ "&nbsp" ;
-            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no" style= ' margin-left :500px;'>  </i>`;
-            list += `<i class='fas fa-trash' style= ' margin-left :500px;'  type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
+            list +=`</div>`;
+            list += `<div class="space">`
+            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
+            list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
+            list +=`</div>`;
             list +=`</div>`;
             $("#addedtask").append(list)
     })
@@ -158,13 +156,18 @@ function pendingPrint(){
 function completedPrint(){
     completed.forEach(value => {
         var list = ""
-        list +=`<div class='${value.id}' style="background-color : lightgrey; padding :4px; height :50px; border : 4px solid black" >`
-            list += `<input type="checkbox" id='${value.id}'  class="o" onclick="pqr('${value.id}')" checked />` + "&nbsp";
+        list +=`<div class='${value.id} design'>`
+            list += `<div class= btwn>`
+            list += `<input type="checkbox" id='${value.id}'  class="o" onclick="pqr('${value.id}')" checked >` + "&nbsp";
             list += value.title + "&nbsp";
             list += value.description + "&nbsp"+ "&nbsp" ;
-            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no" style= ' margin-left :500px;'>  </i>`;
-            list += `<i class='fas fa-trash' style= ' margin-left :500px;'  type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
             list +=`</div>`;
+            list += `<div class="space">`
+            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
+            list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
+            list +=`</div>`;
+            list +=`</div>`;
+``
             $("#completedtask").append(list)
     })
 }
@@ -194,9 +197,10 @@ $(document).ready(function()
                 $("#description").val('')
                 $("#title").focus()
                 getTodo()
-                completedPrint()
+                
                 pendingPrint()
             }
         })
     })
 })
+// style="background-color : lightgrey; padding :4px; height :50px; margin-bottom: 20px;  border : 2px solid black;
