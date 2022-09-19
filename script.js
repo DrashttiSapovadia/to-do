@@ -113,9 +113,11 @@ function pendingPrint(){
         var list = ""
         list +=`<div class='${value.id} design'>`
         list += `<div class= btwn>`
-            list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >` + "&nbsp";
-            list += value.title + "&nbsp";
-            list += value.description + "&nbsp"+ "&nbsp" ;
+            list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >`+ "&nbsp";
+            list +=`<ul>`
+            list += `<li style= "font-size :larger;">`+`<b>`+value.title +`</b>`+ "&nbsp" +`</li>`;
+            list += value.description + "&nbsp"+"&nbsp" ;
+            list += `</ul>`
             list +=`</div>`;
             list += `<div class="space">`
             list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
@@ -129,18 +131,20 @@ function pendingPrint(){
 function completedPrint(){
     completed.forEach(value => {
         var list = ""
-        list +=`<div class='${value.id} design'>`
+            list +=`<div class='${value.id} design'>`
             list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="pqr('${value.id}')" checked >` + "&nbsp";
-            list += value.title + "&nbsp";
+            list +=`<ul>`
+            list +=`<li style= "font-size :larger;">`+`<b>`+ value.title + `</b>`+ "&nbsp"  +`</li>`;
             list += value.description + "&nbsp"+ "&nbsp" ;
+            list += `</ul>`
             list +=`</div>`;
             list += `<div class="space">`
             list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
             list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
             list +=`</div>`;
             list +=`</div>`;
-             $("#completedtask").append(list)
+            $("#completedtask").append(list)
     })
 }
 
