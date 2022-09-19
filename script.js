@@ -21,19 +21,6 @@ function pqr(id)
         }
 
     })
-    // $(`.${id}`).remove()
-    // $.get(url + id,function(data)
-    // { 
-    //     var list = "";
-    //     list += `<div class='${data.id}' style="background-color : lightgrey; padding :4px; height :50px; border : 4px solid black">`
-    //     list += `<input type="checkbox" onclick="abc('${data.id}')"> `+ "&nbsp";
-    //     list += data.title + "&nbsp";
-    //     list += data.description + "&nbsp"+ "&nbsp" ;
-    //     list += `<i class="fas fa-edit" type="submit" id='${data.id}' onclick="edit('${data.id}')" class="no" style= ' margin-left :500px;'>  </i>`;
-    //     list += `<i class='fas fa-trash' style= ' margin-left :500px;'  type="submit" id='${data.id}' class="no" onclick="del('${data.id}')"></i>`
-    //     list +=`</div>`
-    //     $("#addedtask").append(list)  
-    // })   
 }
 function abc(id)
 {
@@ -52,20 +39,6 @@ function abc(id)
         }
 
     })
-    // $(`.${id}`).remove()
-    // $.get(url + id,function(data)
-    // { 
-    //     var list = "";
-    //     list +=`<div class='${data.id}' style="background-color : lightgrey; padding :4px; height :50px; border : 4px solid black" >`
-    //     list += `<input type="checkbox" id='${data.id}' class="xyz" onclick="pqr('${data.id}')">`+ "&nbsp";
-    //     list += data.title + "&nbsp";
-    //     list += data.description + "&nbsp"+ "&nbsp" ;
-    //     list += `<i class="fas fa-edit" type="submit" id='${data.id}' onclick="edit('${data.id}')" style= ' margin-left :500px;'>  </i>`;
-    //     list += `<i class='fas fa-trash' style= ' margin-left :500px;'  type="submit" id='${data.id}' onclick="del('${data.id}')"></i>`
-    //     list +=`</div>`
-    //     $("#removed").append(list)  
-    //     $(".xyz").prop("checked",true)    
-    // })
 }
 
 function edit(id)
@@ -191,16 +164,15 @@ $(document).ready(function()
             type: "POST",
             data: JSON.stringify(data),
             contentType: 'application/json',
-            success: function(){
+            success: function()
+            {
                 $("#addedtask").empty()
                 $("#title").val('')
                 $("#description").val('')
                 $("#title").focus()
                 getTodo()
-                
                 pendingPrint()
             }
         })
     })
 })
-// style="background-color : lightgrey; padding :4px; height :50px; margin-bottom: 20px;  border : 2px solid black;
