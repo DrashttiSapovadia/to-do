@@ -1,15 +1,18 @@
 #myDIV
 {
     border: 2px solid black;
-    margin-left: 210px;
+    margin-left: 250px;
     padding-bottom: 20px;
     width: 500px;
-    padding-left: 320PX;
+    padding-left: 290PX;
+    background-color:lightgray ;
+    color: white;
+    height: 180px;
 }
 
 #add,#change
 {
-    margin-left: 70px;
+    margin-left: 60px;
 }
 
 h2
@@ -25,6 +28,7 @@ h2
     margin-right: 50px;
     padding: 10px;
     width: 1000px;
+    /* background-color: black; */
 }
 .design
 {
@@ -50,4 +54,11 @@ h2
     display: flex;
     align-items: center;
   
+}
+h3{
+    background-color: black;
+    height: 40px;
+    color : white;
+     width: 982px;
+     padding-top: 20px;
 }
