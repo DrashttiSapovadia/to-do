@@ -140,15 +140,13 @@ function completedPrint(){
             list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
             list +=`</div>`;
             list +=`</div>`;
-``
-            $("#completedtask").append(list)
+             $("#completedtask").append(list)
     })
 }
 
 
 $(document).ready(function()    
 {   
-    
     $("#change").hide()
     getTodo();
     $("#add").click(function(e)
