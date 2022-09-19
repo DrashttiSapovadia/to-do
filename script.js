@@ -115,7 +115,7 @@ function pendingPrint(){
         list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="abc('${value.id}')" >`+ "&nbsp";
             list +=`<ul style="list-style : none;">`
-            list += `<li style= "font-size :larger;">`+`<b>`+value.title +`</b>`+ "&nbsp" +`</li>`;
+            list += `<li style= "font-size :x-large;">`+`<b>`+value.title +`</b>`+ "&nbsp" +`</li>`;
             list += value.description + "&nbsp"+"&nbsp" ;
             list += `</ul>`;
             list +=`</div>`;
@@ -135,7 +135,7 @@ function completedPrint(){
             list += `<div class= btwn>`
             list += `<input type="checkbox" id='${value.id}'  class="o" onclick="pqr('${value.id}')" checked >` + "&nbsp";
             list +=`<ul style="list-style : none;">`
-            list +=`<li style= "font-size :larger;">`+`<b>`+ value.title + `</b>`+ "&nbsp"  +`</li>`;
+            list +=`<li style= "font-size :x-large;">`+`<b>`+ value.title + `</b>`+ "&nbsp"  +`</li>`;
             list += value.description + "&nbsp"+ "&nbsp" ;
             list += `</ul>`;
             list +=`</div>`;
