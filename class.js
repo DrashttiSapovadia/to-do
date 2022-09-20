@@ -228,9 +228,11 @@ $("#add").click(function(e)
     else if(data.title === "")
     {
         lblError.innerHTML= "title cannot be empty.";
+        error.innerHTML= "";
     }
     else if(data.description === "")
     {
+        lblError.innerHTML= "";
         error.innerHTML= "description cannot be empty.";
     }
     else
