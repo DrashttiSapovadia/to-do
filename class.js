@@ -239,7 +239,6 @@ $("#add").click(function(e)
     {
         $("#lblError").hide();
         $("#error").hide();
-
         newApp.post(url);
     }
 })
