@@ -1,3 +1,4 @@
+window.alert = function() { throw("An alert called") }
 const url = "https://internapp.vercel.app/drashti/todos/"
 var pending = [], completed = []
 function randomID()
