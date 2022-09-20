@@ -104,7 +104,7 @@ class app
             data: JSON.stringify(data),
             contentType: 'application/json',
             success: function()
-            {
+            { 
                 $("#change").hide()
                 $("#addedtask").empty()
                 $("#title").val('')
@@ -211,9 +211,24 @@ $("#change").hide()
 
 $("#add").click(function(e)
 {
+    e.preventDefault();
+    var data = {
+        title: $("#title").val(),
+        description: $("#description").val(),
+        completed : false
+    }
+    if(data.title === "" && data.description === "")
+    {
+        lblError.innerHTML= "title cannot be empty.";
+        error.innerHTML= "description cannot be empty.";
+    }
+    else
+    {
+        $("#lblError").hide();
+        $("#error").hide();
 
-//    e.preventDefault();
-   newApp.post(url);
+        newApp.post(url);
+    }
 })
 function del(id)
 {
