@@ -98,14 +98,17 @@ class app
             description: $("#description").val(),
             completed : false
         }
+        
         $.ajax({
             url: url,
             type: "POST",
             data: JSON.stringify(data),
             contentType: 'application/json',
             success: function()
-            { 
-                $("#change").hide()
+            {  
+                $("#change").hide();
+                $("#lblError").hide();
+                $("#error").hide();
                 $("#addedtask").empty()
                 $("#title").val('')
                 $("#description").val('')
@@ -113,7 +116,7 @@ class app
                 newApp.getTodo(url)
                 newApp.pendingPrint()
             }
-        })
+              })
     
     }
     
@@ -220,6 +223,14 @@ $("#add").click(function(e)
     if(data.title === "" && data.description === "")
     {
         lblError.innerHTML= "title cannot be empty.";
+        error.innerHTML= "description cannot be empty.";
+    }
+    else if(data.title === "")
+    {
+        lblError.innerHTML= "title cannot be empty.";
+    }
+    else if(data.description === "")
+    {
         error.innerHTML= "description cannot be empty.";
     }
     else
