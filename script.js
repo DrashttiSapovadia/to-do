@@ -120,8 +120,8 @@ function pendingPrint(){
             list += `</ul>`;
             list +=`</div>`;
             list += `<div class="space">`
-            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
-            list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
+            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')">  </i>`;
+            list += `<i class='fas fa-trash'type="submit" id='${value.id}' onclick="del('${value.id}')"></i>`
             list +=`</div>`;
             list +=`</div>`;
             $("#addedtask").append(list)
@@ -140,8 +140,8 @@ function completedPrint(){
             list += `</ul>`;
             list +=`</div>`;
             list += `<div class="space">`
-            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')" class="no">  </i>`;
-            list += `<i class='fas fa-trash'type="submit" id='${value.id}' class="no" onclick="del('${value.id}')"></i>`
+            list += `<i class="fas fa-edit" type="submit" id='${value.id}' onclick="edit('${value.id}')">  </i>`;
+            list += `<i class='fas fa-trash'type="submit" id='${value.id}' onclick="del('${value.id}')"></i>`
             list +=`</div>`;
             list +=`</div>`;
             $("#completedtask").append(list)
