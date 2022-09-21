@@ -107,8 +107,6 @@ class app
             success: function()
             {  
                 $("#change").hide();
-                $("#lblError").hide();
-                $("#error").hide();
                 $("#addedtask").empty()
                 $("#title").val('')
                 $("#description").val('')
@@ -220,26 +218,26 @@ $("#add").click(function(e)
         description: $("#description").val(),
         completed : false
     }
-    if(data.title === "" && data.description === "")
+    if(data.title == "" && data.description == "")
     {
-        lblError.innerHTML= "title cannot be empty.";
-        error.innerHTML= "description cannot be empty.";
+        $("#lblError").text("title cannot be empty.");
+        $("#error").text("description cannot be empty.");
     }
-    else if(data.title === "")
+    else if(data.title == "")
     {
-        lblError.innerHTML= "title cannot be empty.";
-        error.innerHTML= "";
+        $("#lblError").text("title cannot be empty.")
+        $("#error").text(" ")= "";
     }
-    else if(data.description === "")
+    else if(data.description == "")
     {
-        lblError.innerHTML= "";
-        error.innerHTML= "description cannot be empty.";
+        $("#lblError").text(" ")
+        $("#error").text("description cannot be empty.")
     }
     else
     {
-        $("#lblError").hide();
-        $("#error").hide();
         newApp.post(url);
+        $("#lblError").text("");
+        $("#error").text("");
     }
 })
 function del(id)
